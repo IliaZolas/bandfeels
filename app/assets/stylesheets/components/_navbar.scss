@@ -1,6 +1,19 @@
+.navbar {
+  position: fixed;
+  font-size: 18px;
+  color: #fff;
+  left: 0;
+  background-color: rgba(0,0,0, 0.0);
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +21,21 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  // width: 40px;
+}
+
+.nav-link {
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+    a {
+      color: white;
+    }
+}
+
+.bandfeels-temp-logo {
+  color:white;
+  font-size: 28px;
+  padding-top: 15px;
 }

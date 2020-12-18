@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+
+.home-background {
+    background-image: url("home-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container-home {
+    padding:250px;
+    text-align: center;
+}
