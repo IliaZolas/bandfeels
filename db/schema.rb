@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_18_194341) do
+ActiveRecord::Schema.define(version: 2020_12_20_131346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,27 @@ ActiveRecord::Schema.define(version: 2020_12_18_194341) do
     t.text "album_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_albums_on_user_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string "playlist_title"
+    t.text "playlist_description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_playlists_on_user_id"
+  end
+
+  create_table "playlists_tags", id: false, force: :cascade do |t|
+    t.bigint "playlist_id", null: false
+    t.bigint "tag_id", null: false
+  end
+
+  create_table "playlists_tracks", id: false, force: :cascade do |t|
+    t.bigint "playlist_id", null: false
+    t.bigint "track_id", null: false
   end
 
   create_table "tags", force: :cascade do |t|
@@ -28,12 +49,21 @@ ActiveRecord::Schema.define(version: 2020_12_18_194341) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tags_tracks", id: false, force: :cascade do |t|
+    t.bigint "track_id", null: false
+    t.bigint "tag_id", null: false
+  end
+
   create_table "tracks", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.string "artist"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "album_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["album_id"], name: "index_tracks_on_album_id"
+    t.index ["user_id"], name: "index_tracks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,4 +78,8 @@ ActiveRecord::Schema.define(version: 2020_12_18_194341) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "albums", "users"
+  add_foreign_key "playlists", "users"
+  add_foreign_key "tracks", "albums"
+  add_foreign_key "tracks", "users"
 end
