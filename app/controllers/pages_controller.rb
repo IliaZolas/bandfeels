@@ -10,4 +10,6 @@ class PagesController < ApplicationController
   def contact
   end
 
+  def station
+  end
 end
