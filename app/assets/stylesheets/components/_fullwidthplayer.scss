@@ -1,0 +1,67 @@
+.fullwidth-player {
+    position: absolute;
+    display: flex;
+    z-index: 3;
+    width: 80%;
+    background-color:rgba(0,0,0,0.3);
+    border-radius:20px;
+    height: 112px;
+    bottom: 50px;
+    left: 10%;
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+}
+
+.image-player {
+    width: 90px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.player-song-title {
+    font-size: 18px;
+}
+
+.player-song-details {
+    font-size: 12px;
+}
+
+.player-song-details-container {
+    padding-left: 10px;
+    align-items: left;
+
+}
+
+.player-progress-controls {
+    
+}
+
+.player-progress-container {
+    
+}
+
+.player-buttons {
+    display: flex;
+    width: 100px;
+    padding-bottom: 20px;
+    color: white;
+    margin:auto;
+}
+
+.line {
+    border-bottom: 2px solid white;
+    width: 800px;
+}
+
+.player-actions {
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    width: 60px;
+    margin:auto 0;
+
+}
