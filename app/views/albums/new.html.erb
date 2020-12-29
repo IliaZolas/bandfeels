@@ -4,16 +4,34 @@
             <%= render 'shared/verticalnavbar' %>
             <%= yield %>
         </div>
-        <div class="albums-area">
-        <% @album.each do |album| %>    
-            <div class="track-card">
-                <h2><%= album.album_title %></h2>
-                <p class=""><%= album.album_description %></p>
-                <%= link_to "VIEW DETAILS", albums_path(album), class:'' %>
+        <div class="create-album-area flex">
+            <div class="left-div">
+                <h1 class="new-album-heading">Create a <span class="purple-heading">New Album</span></h1>
+                <div class="album-image-new">
+                <!-- Ruby code to insert image -->
+                </div>
+                <p class="new-album-text">When you have created an album, you will be able to upload your tracks and add details to them.</p>
             </div>
-            <% end %>
+            <div class="right-div">
+                <div class="album-form-area">
+                    <h2>Create new album</h2>
+                        <%= simple_form_for [@album] do |f| %>
+                        <%= f.input :album_title,
+                                    required: true,
+                                    autofocus: true,
+                                    input_html: { autocomplete: "title" }%>
+                        <%= f.input :album_description,
+                                    required: true,
+                                    autofocus: true,
+                                    input_html: { autocomplete: "description" }%>
+                        <%= f.input :photo,
+                                    autofocus: true,
+                                    as: :file %>
+                        <%= f.submit "CREATE", class: "btn btn-primary" %>
+                        <% end %>
+                </div>
+            </div>
         </div>
-    </div>
 
         <div class="fullwidth-player">
             <div class="player-details">
