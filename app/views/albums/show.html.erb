@@ -4,27 +4,42 @@
             <%= render 'shared/verticalnavbar' %>
             <%= yield %>
         </div>
+        <div class="album-tracks-area">
+            <div class="background-albums-show">
+                <% if @album.photo.attached? %>
+                <%= cl_image_tag @album.photo.key, class: "show-background"%>
+                <%end%>
+            </div>
+            <div class="album-show-details"> 
+                <div class="">
+                    <h2 class="card-header"><%= @album.album_title %></h2>
+                    <p class="card-subheader"><%= @album.album_description %></p>
+                </div>
+                <div class="add-track">
+                <%= link_to "Add Track", new_track_path, class: "add-track-button" %>
+                </div>
+            </div>
+        </div>
         <div class="albums-area">
-        <% @album.each do |album| %>    
+            <% @track.each do |track| %>    
             <div class="track-card">
-            <% if album.photo.attached? %>
-                <%= cl_image_tag album.photo.key, class: "card-background"%>
-                <%= cl_image_tag album.photo.key, class: "", height: 180 %>
+            <% if track.photo.attached? %>
+                <%= cl_image_tag track.photo.key, class: "card-background"%>
+                <%= cl_image_tag track.photo.key, class: "", height: 180 %>
             <% end %>
                 <div class="album-details">
-                    <h2 class="card-header"><%= album.album_title %></h2>
-                    <p class="card-subheader"><%= album.album_description %></p>
+                    <h2 class="card-header"><%= track.title %></h2>
+                    <p class="card-subheader"><%= track.description %></p>
                         <div class="flex space-between controllers">
                             <i class="fas fa-fast-backward"></i>
                             <i class="fas fa-play"></i>
                             <i class="fas fa-fast-forward"></i>
                         </div>
-                    <%= link_to "Edit", album_path(album), class: "track-edit" %>
+                    <%= link_to "Edit", class: "track-edit" %>
                 </div>
             </div>
             <% end %>
         </div>
-    </div>
 
     <div class="fullwidth-player fixed">
         <div class="player-details">
@@ -62,4 +77,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

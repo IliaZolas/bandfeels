@@ -1,0 +1,36 @@
+.album-tracks-area {
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    // grid-column-gap: 20px;
+    // row-gap: 40px;
+    // padding: 75px 20px 75px 20px;
+    // width: 90%;
+    // margin-left: 280px;
+}
+
+.station-background {
+    // background-image: url("home-background.jpg");
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // // height: 100vh;
+    // background-attachment:fixed;
+}
+
+.background-albums-show {
+    position: relative;
+}
+
+.show-background {
+    position: relative;
+    // filter: blur(8px);
+    // -webkit-filter: blur(8px);
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+}
+
+.album-show-details {
+    position: absolute;
+    margin-left: 280px;
+}

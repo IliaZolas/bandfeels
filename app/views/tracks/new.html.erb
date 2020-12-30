@@ -6,7 +6,7 @@
         </div>
         <div class="create-album-area flex">
             <div class="left-div">
-                <h1 class="new-album-heading">Create a <span class="purple-heading">New Album</span></h1>
+                <h1 class="new-album-heading">Add <span class="purple-heading">New Track</span></h1>
                 <div class="album-image-new">
                 <!-- Ruby code to insert image -->
                 </div>
@@ -14,13 +14,13 @@
             </div>
             <div class="right-div">
                 <div class="album-form-area">
-                    <h2>Create new album</h2>
-                        <%= simple_form_for [@album] do |f| %>
-                        <%= f.input :album_title,
+                    <h2>Add new track</h2>
+                        <%= simple_form_for [@track] do |f| %>
+                        <%= f.input :title,
                                     required: true,
                                     autofocus: true,
                                     input_html: { autocomplete: "title" }%>
-                        <%= f.input :album_description,
+                        <%= f.input :description,
                                     required: true,
                                     autofocus: true,
                                     input_html: { autocomplete: "description" }%>
