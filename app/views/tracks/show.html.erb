@@ -6,17 +6,17 @@
         </div>
         <div class="album-tracks-area">
             <div class="background-albums-show">
-                <% if @album.photo.attached? %>
-                <%= cl_image_tag @album.photo.key, class: "show-background"%>
+                <% if @track.photo.attached? %>
+                <%= cl_image_tag @track.photo.key, class: "show-background"%>
                 <%end%>
             </div>
             <div class="album-show-details"> 
                 <div class="">
-                    <h2 class="card-header"><%= @album.album_title %></h2>
-                    <p class="card-subheader"><%= @album.album_description %></p>
+                    <h2 class="card-header"><%= @track.title %></h2>
+                    <p class="card-subheader"><%= @track.description %></p>
                 </div>
                 <div class="add-track">
-                <%= link_to "Add Track", new_album_track_path(@album),class: "add-track-button" %>
+                <%= link_to "Edit Track", class: "add-track-button" %>
                 </div>
             </div>
         </div>

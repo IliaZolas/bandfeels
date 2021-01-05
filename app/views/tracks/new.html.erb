@@ -16,7 +16,7 @@
                 <div class="album-form-area">
                     <!-- Ruby code for form -->
                     <h2>Add new track</h2>
-                        <%= simple_form_for [@track] do |f| %>
+                        <%= simple_form_for [@album, @track] do |f| %>
                         <%= f.input :title,
                                     required: true,
                                     autofocus: true,
@@ -26,6 +26,9 @@
                                     autofocus: true,
                                     input_html: { autocomplete: "description" }%>
                         <%= f.input :photo,
+                                    autofocus: true,
+                                    as: :file %>
+                        <%= f.input :track,
                                     autofocus: true,
                                     as: :file %>
                         <%= f.submit "CREATE", class: "btn btn-primary" %>

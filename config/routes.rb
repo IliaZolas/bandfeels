@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       resources :tracks
     end
 
-    resources :tracks
+    # resources :tracks
     # resoures :user
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
