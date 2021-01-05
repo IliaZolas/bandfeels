@@ -11,7 +11,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item"><i class="fas fa-plus-circle add-album-button"></i></li>
+        <li class="nav-item">
+        <%= link_to new_album_path do %>
+        <i class="fas fa-plus-circle add-album-button"></i>
+        <%end%>
+        </li>
         <li class="nav-item dropdown"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "logout-button" %></li>
       <% else %>
       <li class="nav-item">
