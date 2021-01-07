@@ -32,3 +32,19 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+// import components
+import { pressPlayButton } from '../components/play';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  pressPlayButton();
+});
+
+// import pressPlayButton from './application.js';
+
+// const pressPlayButton = () => {
+//   document.getElementById("play-button").addEventListener("click", function () {
+//     document.getElementById("play-track").play();
+//   });
+// }
