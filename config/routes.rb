@@ -16,6 +16,8 @@ Rails.application.routes.draw do
       resources :tracks
     end
 
+    get '/tracks/:id', to: 'tracks#playtrack', as: :playtrack 
+
     # resources :tracks
     # resoures :user
   end
