@@ -1,1 +1,5 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+**BandFeels**
+
+A rails webapp that allows listeners to sign up and stream music that is curated according to mood, acticity, emotion. 
+
+Artists can also sign-up and upload their own music to the application.
