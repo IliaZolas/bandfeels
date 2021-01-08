@@ -35,16 +35,14 @@ document.addEventListener('turbolinks:load', () => {
 
 // import components
 import { pressPlayButton } from '../components/play';
+import { pressPauseButton } from '../components/pause';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   pressPlayButton();
 });
 
-// import pressPlayButton from './application.js';
-
-// const pressPlayButton = () => {
-//   document.getElementById("play-button").addEventListener("click", function () {
-//     document.getElementById("play-track").play();
-//   });
-// }
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  pressPauseButton();
+});

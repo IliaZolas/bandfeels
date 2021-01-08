@@ -31,10 +31,12 @@
                                 <div class="flex space-between controllers">
                                     <i class="fas fa-fast-backward"></i>
                                     <i class="fas fa-play play-button" id="play-button"></i>
+                                    <i class="fas fa-pause pause-button
+                                    hidden" id="pause-button"></i>
                                     <i class="fas fa-fast-forward"></i>
                                 </div>
                                         <% if track.track.attached? %>
-                                        <%= cl_video_tag track.track.key,:source_types => [:mp3],:controls => true,:poster => false, class: "track-play play-track", id: "play-track" %>
+                                        <%= cl_video_tag track.track.key,:source_types => [:mp3],:controls => true,:poster => false, class: "track-play play-track", id: "play-track"%>
                                         <%end%>
                             <%= link_to "Edit", class: "track-edit" %>
                         </div>

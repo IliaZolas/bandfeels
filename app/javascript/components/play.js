@@ -1,6 +1,10 @@
 const pressPlayButton = () => {
     document.getElementById("play-button").addEventListener("click", function () {
         document.getElementById("play-track").play();
+        document.getElementById("play-button").className += " hidden";
+        document.getElementById("pause-button").className =
+            document.getElementById("pause-button").className.replace
+                (/(?:^|\s)hidden(?!\S)/g, '');
     });
 }
 export { pressPlayButton };
