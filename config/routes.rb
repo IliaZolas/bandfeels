@@ -16,6 +16,8 @@ Rails.application.routes.draw do
       resources :tracks
     end
 
+    resources :tracks
+
     resources :station, only:[:index]
 
     # get '/tracks/:id', to: 'tracks#playtrack', as: :playtrack 

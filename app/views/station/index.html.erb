@@ -15,9 +15,6 @@
                         <h2 class="card-header"><%= @track.first.title %></h2>
                         <p class="card-subheader"><%= @track.first.description %></p>
                     </div>
-                    <div class="add-track">
-                    <%= link_to "Add Track",class: "add-track-button" %>
-                    </div>
                 <div class="album-tracks-area">
                     <% @track.each do |track| %>    
                     <div class="track-card">
@@ -38,7 +35,17 @@
                                         <% if track.track.attached? %>
                                         <%= cl_video_tag track.track.key,:source_types => [:mp3],:controls => true,:poster => false, class: "track-play play-track", id: "play-track"%>
                                         <%end%>
-                            <%= link_to "Edit", class: "track-edit" %>
+                                <div class="track-actions space-between">
+                                    <div>
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-share-alt"></i>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                     <% end %>

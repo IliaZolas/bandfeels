@@ -29,6 +29,12 @@ class TracksController < ApplicationController
     end
 
     def destroy
+        @track = Track.find(params[:id])
+        # @album_id = Album.find(params[:id])
+        @album = Album.find(params[:album_id])
+        # @track.album = @album
+        @track.destroy
+        redirect_to album_path(@album)
     end
 
     # def playtrack

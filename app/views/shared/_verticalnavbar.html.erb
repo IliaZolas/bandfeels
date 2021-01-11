@@ -10,14 +10,16 @@
         <%= link_to "Station", station_index_path, class: "nav-text" %>
         </div>
         <div class="flex">
-        <i class="fas fa-music"></i><p class="nav-text">Playlists</p>
-        </div>
-        <div class="flex">
-        <i class="fas fa-user"></i><p class="nav-text">Account</p>
+        <i class="fas fa-music"></i>
+        <%= link_to "Playlists", station_index_path, class: "nav-text" %>
         </div>
         <div class="flex">
         <i class="fas fa-compact-disc"></i>
         <%= link_to "Albums", albums_path, class: "nav-text" %>
+        </div>
+        <div class="flex">
+        <i class="fas fa-user"></i>
+        <%= link_to "Account", station_index_path, class: "nav-text" %>
         </div>
     </div>
 

@@ -40,6 +40,10 @@
                                         <%end%>
                             <%= link_to "Edit", class: "track-edit" %>
                         </div>
+                        <p class='delete-button'>
+                        <%= link_to "Delete",
+                                    album_track_path(@album, track), method: :delete, data: {confirm: "Are you sure?"}  %>
+                        </p>
                     </div>
                     <% end %>
                 </div>
