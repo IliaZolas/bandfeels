@@ -31,12 +31,12 @@ class TracksController < ApplicationController
     def destroy
     end
 
-    def playtrack
-    @playtrack = Track.find(params[:id])
-        # if @playtrack.save!
-        #     send_file @playtrack.path
-        # end
-    end
+    # def playtrack
+    # @playtrack = Track.find(params[:id])
+    #     # if @playtrack.save!
+    #     #     send_file @playtrack.path
+    #     # end
+    # end
 
     private
 
