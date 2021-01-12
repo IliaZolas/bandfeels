@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   authenticated :user do
-    root 'pages#station'
+    root 'station#index'
 
     resources :albums do
       resources :tracks
@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
     resources :tracks
 
-    resources :station, only:[:index]
+    resources :station
+
+    resources :playlists
 
     # get '/tracks/:id', to: 'tracks#playtrack', as: :playtrack 
 

@@ -6,8 +6,8 @@
         </div>
             <div class="album-tracks-area">
                 <div class="background-albums-show">
-                    <% if @track.first.photo.attached? %>
-                    <%= cl_image_tag @track.first.photo.key, class: "show-background"%>
+                    <% if @playlist.first.photo.attached? %>
+                    <%= cl_image_tag @playlist.first.photo.key, class: "show-background"%>
                     <%end%>
                 </div>
                 <div class="album-show-details">
@@ -23,29 +23,26 @@
                     <% end %>
                 </div> 
                     <div class="">
-                        <h2 class="card-header"><%= @track.first.title %></h2>
-                        <p class="card-subheader"><%= @track.first.description %></p>
+                        <h2 class="card-header"><%= @playlist.first.playlist_title %></h2>
+                        <p class="card-subheader"><%= @playlist.first.playlist_description %></p>
                     </div>
                 <div class="album-tracks-area">
-                    <% @track.each do |track| %>    
+                    <% @playlist.each do |playlist| %>    
                     <div class="track-card">
-                    <% if track.photo.attached? %>
-                        <%= cl_image_tag track.photo.key, class: "card-background"%>
-                        <%= cl_image_tag track.photo.key, class: "", height: 180 %>
+                    <% if playlist.photo.attached? %>
+                        <%= cl_image_tag playlist.photo.key, class: "card-background"%>
+                        <%= cl_image_tag playlist.photo.key, class: "", height: 180 %>
                     <% end %>
                         <div class="album-details">
-                            <h2 class="card-header"><%= track.title %></h2>
-                            <p class="card-subheader"><%= track.description %></p>
+                            <h2 class="card-header"><%= playlist.playlist_title %></h2>
+                            <p class="card-subheader"><%= playlist.playlist_description %></p>
                                 <div class="flex space-between controllers">
                                     <i class="fas fa-fast-backward"></i>
-                                    <i class="fas fa-play play-button" id=<%= "track-#{track.id}" %> ></i>
+                                    <i class="fas fa-play play-button" id=<%= "playlist-#{playlist.id}" %> ></i>
                                     <i class="fas fa-pause pause-button
                                     hidden" id="pause-button"></i>
                                     <i class="fas fa-fast-forward"></i>
                                 </div>
-                                        <% if track.track.attached? %>
-                                        <%= cl_video_tag track.track.key,:source_types => [:mp3],:controls => true,:poster => false, class: "track-play play-track", id: "play-track"%>
-                                        <%end%>
                                 <div class="track-actions space-between">
                                     <div>
                                         <i class="fas fa-heart"></i>
