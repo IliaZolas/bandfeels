@@ -4,62 +4,28 @@
             <%= render 'shared/verticalnavbar' %>
             <%= yield %>
         </div>
-            <div class="album-tracks-area">
-                <div class="background-albums-show">
-                    <% if @playlist.first.photo.attached? %>
-                    <%= cl_image_tag @playlist.first.photo.key, class: "show-background"%>
-                    <%end%>
-                </div>
-                <div class="album-show-details">
-                <div>
-                <h2>Search Track</h2>
-                    <%= form_tag station_index_path, method: :get do %>
-                    <%= text_field_tag :query,
-                        params[:query],
-                        class: "search-form",
-                        placeholder: "Search by mood, activity or emotion"
-                    %>
-                    <%= submit_tag "Search", class: "btn btn-primary" %>
-                    <% end %>
-                </div> 
-                    <div class="">
-                        <h2 class="card-header"><%= @playlist.first.playlist_title %></h2>
-                        <p class="card-subheader"><%= @playlist.first.playlist_description %></p>
-                    </div>
-                <div class="album-tracks-area">
-                    <% @playlist.each do |playlist| %>    
-                    <div class="track-card">
-                    <% if playlist.photo.attached? %>
-                        <%= cl_image_tag playlist.photo.key, class: "card-background"%>
-                        <%= cl_image_tag playlist.photo.key, class: "", height: 180 %>
-                    <% end %>
-                        <div class="album-details">
-                            <h2 class="card-header"><%= playlist.playlist_title %></h2>
-                            <p class="card-subheader"><%= playlist.playlist_description %></p>
-                                <div class="flex space-between controllers">
-                                    <i class="fas fa-fast-backward"></i>
-                                    <i class="fas fa-play play-button" id=<%= "playlist-#{playlist.id}" %> ></i>
-                                    <i class="fas fa-pause pause-button
-                                    hidden" id="pause-button"></i>
-                                    <i class="fas fa-fast-forward"></i>
-                                </div>
-                                <div class="track-actions space-between">
-                                    <div>
-                                        <i class="fas fa-heart"></i>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-share-alt"></i>
-                                    </div>
-                                </div>
+        <div class="albums-area">
+        <% @playlist.each do |playlist| %>    
+            <div class="track-card">
+            <% if playlist.photo.attached? %>
+                <%= cl_image_tag playlist.photo.key, class: "card-background"%>
+                <%= cl_image_tag playlist.photo.key, class: "", height: 180 %>
+            <% end %>
+                <div class="album-details">
+                    <h2 class="card-header"><%= playlist.playlist_title %></h2>
+                    <p class="card-subheader"><%= playlist.playlist_description %></p>
+                        <div class="flex space-between controllers">
+                            <i class="fas fa-fast-backward"></i>
+                            <i class="fas fa-play"></i>
+                            <i class="fas fa-fast-forward"></i>
                         </div>
-                    </div>
-                    <% end %>
+                    <%= link_to "Edit", playlist_path(playlist), class: "track-edit" %>
                 </div>
             </div>
+            <% end %>
         </div>
+    </div>
+
     <div class="fullwidth-player fixed">
         <div class="player-details">
             <div>
@@ -96,5 +62,4 @@
             </div>
         </div>
     </div>
-</div>
 </div>

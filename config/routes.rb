@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
     resources :station
 
-    resources :playlists
+    resources :playlists do
+      resources :tracks
+    end
 
     # get '/tracks/:id', to: 'tracks#playtrack', as: :playtrack 
 
