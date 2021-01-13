@@ -1,6 +1,7 @@
 class Playlist < ApplicationRecord
-    has_many :tracks, through: :playlists_tracks
-    has_many :tags, through: :playlists_tags
+    has_many :playlist_tracks
+    has_many :tracks, through: :playlist_tracks
+    has_many :tags, through: :playlist_tags
     belongs_to :user
 
     validates :playlist_title, presence: true, length: { in: 1..20 }

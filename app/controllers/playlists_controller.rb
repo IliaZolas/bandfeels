@@ -6,7 +6,7 @@ class PlaylistsController < ApplicationController
 
     def show
         @playlist = Playlist.find(params[:id])
-        @track = Track.where(playlist_id: params[:id])
+        @tracks = @playlist.tracks
     end
 
     def new
