@@ -6,6 +6,11 @@ class StationController < ApplicationController
         else
             @track = Track.all
         end
+        @playlist = Playlist.new
+    end
+
+    def show
+        # @playlist = Playlist.find(params[:playlist_id])
     end
 
         private

@@ -57,6 +57,12 @@
                                         <i class="fas fa-share-alt"></i>
                                     </div>
                                 </div>
+                                <div class="playlist-form">
+                                <%= simple_form_for [@playlist] do |f| %>
+                                <%= f.input :playlist_title, :collection => %w[Mike Nick Jason Tim] %>
+                                <%= f.submit "CREATE", class: "btn btn-primary" %>
+                                <% end %>
+                                </div>
                         </div>
                     </div>
                     <% end %>
