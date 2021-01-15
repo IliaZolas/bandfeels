@@ -6,7 +6,7 @@ class StationController < ApplicationController
         else
             @track = Track.all
         end
-        @playlist = Playlist.new
+        @playlist_track = PlaylistTrack.new
     end
 
     def show
