@@ -58,12 +58,12 @@
                                     </div>
                                 </div>
                                 <div class="playlist-form">
-                                <%= simple_form_for track do |f| %>
-                                    <%= f.fields_for :playlist_tracks_attributes do |s| %>
-                                    <%= s.input :playlist, :collection => Playlist.all, label_method: :playlist_title%>
-                                    <% end %>
-                                <%= f.submit "CREATE", class: "btn btn-primary" %>
-                                <% end %>
+                      <%= simple_form_for @playlist_track, url: playlist_tracks_path, method: :post do |f| %>
+                        <%= f.association :playlist, :collection => Playlist.all, label_method: :playlist_title %>
+                        <%= f.input :track_id, as: :hidden, input_html: { value: track.id } %>
+                        <%= f.submit "Create" %>
+                        <% end %>
+
                                 </div>
                         </div>
                     </div>
