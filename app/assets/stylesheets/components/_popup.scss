@@ -1,11 +1,13 @@
 .pop-up {
+    display: block;
     background-color: #000;
     color: white;
     padding: 10px;
     text-align: center;
-    z-index: 1000;
     animation: fadeIn ease 1s;
--webkit-animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    position: absolute;
+    z-index: 99999;
 }
 
 @keyframes fadeIn {
