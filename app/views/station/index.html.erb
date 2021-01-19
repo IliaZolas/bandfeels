@@ -59,6 +59,9 @@
                                 </div>
                         </div>
                         <div class="pop-up hidden-popup" id="popup">
+                            <div>
+                                <i class="fas fa-times"></i>
+                            </div>
                             <h1>Choose Playlist</h1>
                             <div class="playlist-form">
                                 <%= simple_form_for @playlist_track, url: playlist_tracks_path, method: :post do |f| %>

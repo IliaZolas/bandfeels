@@ -23,7 +23,6 @@ class TracksController < ApplicationController
             else
             render 'new'
         end
-        raise
     end
 
     def update

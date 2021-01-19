@@ -1,6 +1,6 @@
 .track-card {
     width: 250px;
-    height: 480px;
+    height: 380px;
     // background-image: url("https://images.unsplash.com/photo-1531278520962-fcf47a2faea2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2989&q=80");
     // background-color: rgba(0,0,0,0.1);
     backdrop-filter: blur(5px);
@@ -10,6 +10,7 @@
     overflow:hidden;
     // margin:20px;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.8);
+    position: relative;
 }
 
 .card-background {
