@@ -13,7 +13,7 @@
     // right: 40vh;
 
     display: block;
-    /* background-color: #000; */
+    background-color: rgba(0,0,0,0.7);
     backdrop-filter: blur(15px);
     box-shadow: 0 0 15px rgba(0,0,0,0.9);
     color: white;
@@ -23,10 +23,10 @@
     border-radius: 10px;
     animation: fadeIn ease 1s;
     -webkit-animation: fadeIn ease 1s;
-    position: absolute;
+    position: fixed;
     z-index: 99999;
     top: 20vh;
-    right: 50vh;
+    right: 60vh;
 }
 
 @keyframes fadeIn {

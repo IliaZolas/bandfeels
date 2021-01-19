@@ -37,6 +37,7 @@ document.addEventListener('turbolinks:load', () => {
 import { pressPlayButton } from '../components/play';
 import { pressPauseButton } from '../components/pause';
 import { pressAddToPlaylist } from '../components/popup';
+import { pressClosePopup } from '../components/closepopup';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
@@ -51,4 +52,9 @@ document.addEventListener('turbolinks:load', () => {
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   pressAddToPlaylist();
+});
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  pressClosePopup();
 });

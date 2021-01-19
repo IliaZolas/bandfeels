@@ -17,10 +17,12 @@ Rails.application.routes.draw do
     end
 
     resources :tracks
-
+    
     resources :station
 
     resources :playlist_tracks
+
+    resources :users
 
     resources :playlists do
       resources :tracks
