@@ -4,8 +4,18 @@
             <%= render 'shared/verticalnavbar' %>
             <%= yield %>
         </div>
-            <div class="album-tracks-area" id="trackpopup">
+            <div class="account-area" id="trackpopup">
                 <h1>Account</h1>
+                <p><%= @user.fname %></p>
+                <p><%= @user.lname %></p>
+                <p><%= @user.username %></p>
+                <p><%= @user.email %></p>
+
+                <div class="user-update-btn">
+                <%= link_to "Edit", edit_user_registration_path(current_user), class: "update-btn" %>
+                </div>
+
+
             </div>
         </div>
     <div class="fullwidth-player fixed">
