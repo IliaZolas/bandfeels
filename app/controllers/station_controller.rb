@@ -16,6 +16,6 @@ class StationController < ApplicationController
         private
 
     def track_params
-        params.require(:track).permit(:title, :description, :photo, :track)
+        params.require(:track).permit(:title, :description, :tag, :photo, :track)
     end
 end
