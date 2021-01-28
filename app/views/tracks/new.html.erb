@@ -20,11 +20,15 @@
                         <%= f.input :title,
                                     required: true,
                                     autofocus: true,
-                                    input_html: { autocomplete: "title" }%>
+                                    input_html: { autocomplete: "Title" }%>
                         <%= f.input :description,
                                     required: true,
                                     autofocus: true,
-                                    input_html: { autocomplete: "description" }%>
+                                    input_html: { autocomplete: "Description" }%>
+                        <%= f.input :tag,
+                                    required: true,
+                                    autofocus: true,
+                                    input_html: { autocomplete: "Tags" }%>
                         <%= f.input :photo,
                                     autofocus: true,
                                     as: :file %>

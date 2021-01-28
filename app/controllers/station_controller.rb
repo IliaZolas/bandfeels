@@ -2,7 +2,7 @@ class StationController < ApplicationController
     def index
         # @track = Track.all
         if params[:query].present?
-            @track = Track.where("title ILIKE ?", "%#{params[:query]}%")
+            @track = Track.where("tag ILIKE ?", "%#{params[:query]}%")
         else
             @track = Track.all
         end

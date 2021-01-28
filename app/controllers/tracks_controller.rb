@@ -47,7 +47,7 @@ class TracksController < ApplicationController
     private
 
     def track_params
-        params.require(:track).permit(:title, :description, :photo, playlist_tracks_attributes: [:id, :track_id, :playlist_id, :_destroy])
+        params.require(:track).permit(:title, :description, :tag, :photo, playlist_tracks_attributes: [:id, :track_id, :playlist_id, :_destroy])
     end
 
 end
