@@ -1,6 +1,8 @@
 <div class="vert-nav">
     <div class="vertnav-avatar-title">
-        <%= image_tag "avatar.png", class:"avatar-vertnav" %>
+        <% if current_user.photo.attached? %>
+                    <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
+                    <%end%>
         <h1 class="vertnav-username">@<%= current_user.username %></h1>
         <p class="vertnav-usertype">User Type</h1>
     </div>
