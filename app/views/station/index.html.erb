@@ -8,6 +8,8 @@
                 <div class="background-albums-show">
                     <% if @track.first.photo.attached? %>
                     <%= cl_image_tag @track.first.photo.key, class: "show-background"%>
+                    <% else %>
+                    <% render 'station/index'%>
                     <%end%>
                 </div>
                 <div class="album-show-details">
