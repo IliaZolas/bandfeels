@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
 
     def index
-        @album = Album.all
+        @album = Album.where(user_id: current_user)
     end
 
     def show
