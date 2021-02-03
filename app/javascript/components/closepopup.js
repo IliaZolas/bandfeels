@@ -13,6 +13,29 @@ const pressClosePopup = () => {
 export { pressClosePopup };
 
 
-// document.querySelector('#trackpopup').appendChild(document.querySelector('.pop-up'));
+// popups.forEach((popup) => {
+//     popup.querySelector(".close-popup").addEventListener("click", function () {
+//         popup.classList.add("hidden-popup");
+//         document.querySelector("#trackcard").appendChild(document.querySelector(".none"));
+//         popup.classList.remove("none");
+//     });
+// });
+// }
 
-// document.querySelector('#trackpopup').removeChild(document.querySelector('.pop-up'));
+
+
+
+
+
+
+
+// popups.forEach((popup) => {
+//     popup.querySelector(".close-popup").addEventListener("click", function () {
+//         popup.classList.add("hidden-popup");
+//         cards.forEach((card) => {
+//             card.querySelector("#trackcard").appendChild(document.querySelector(".none"));
+//         });
+//         popup.classList.remove("none");
+//     });
+// });
+// }
