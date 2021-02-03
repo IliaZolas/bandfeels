@@ -4,8 +4,8 @@ const pressClosePopup = () => {
     popups.forEach((popup) => {
         popup.querySelector(".close-popup").addEventListener("click", function () {
             popup.classList.add("hidden-popup");
+            document.querySelector("#trackcard").appendChild(document.querySelector(".none"));
             popup.classList.remove("none");
-            document.querySelector('#trackcard').appendChild(document.querySelector('#popup'));
         });
     });
 }

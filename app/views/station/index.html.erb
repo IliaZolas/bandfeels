@@ -35,7 +35,7 @@
                         <%= cl_image_tag track.photo.key, class: "card-background"%>
                         <%= cl_image_tag track.photo.key, class: "", height: 180 %>
                     <% end %>
-                        <div class="album-details">
+                        <div class="album-details" id="albumdetails">
                             <h2 class="card-header"><%= track.title %></h2>
                             <p class="card-subheader"><%= track.description %></p>
                                 <div class="flex space-between controllers">
