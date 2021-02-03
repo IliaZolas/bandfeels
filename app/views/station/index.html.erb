@@ -30,7 +30,7 @@
                     </div>
                 <div class="album-tracks-area">
                     <% @track.each do |track| %>    
-                    <div class="track-card">
+                    <div class="track-card" id="trackcard">
                     <% if track.photo.attached? %>
                         <%= cl_image_tag track.photo.key, class: "card-background"%>
                         <%= cl_image_tag track.photo.key, class: "", height: 180 %>
