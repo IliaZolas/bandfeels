@@ -4,16 +4,11 @@
             <%= render 'shared/verticalnavbar' %>
             <%= yield %>
         </div>
-        <div class="create-album-area flex">
+        <div class="create-album-area">
             <div class="left-div">
                 <h1 class="new-album-heading">Create a <span class="purple-heading">New Playlist</span></h1>
-                <div class="album-image-new">
-                <!-- Ruby code to insert image -->
-                </div>
-                <p class="new-album-text">When you have created an album, you will be able to upload your tracks and add details to them.</p>
-            </div>
             <div class="right-div">
-                <div class="album-form-area">
+                <div class="playlist-form-area">
                     <h2>Create new Playlist</h2>
                         <%= simple_form_for [@playlist] do |f| %>
                         <%= f.input :playlist_title,
@@ -32,7 +27,6 @@
                 </div>
             </div>
         </div>
-
         <div class="fullwidth-player fixed">
             <div class="player-details">
                 <div>
