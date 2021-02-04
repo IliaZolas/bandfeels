@@ -6,8 +6,8 @@
         </div>
             <div class="account-area" id="trackpopup">
                 <h1>Account</h1>
+                <div class="flex align-center space-around">
                 <div class="avatar-account">
-                    <h3>Profile Picture</h3>
                     <% if @user.photo.attached? %>
                     <%= cl_image_tag @user.photo.key, class: "avatar-large-account" %>
                     <%end%>
@@ -21,6 +21,7 @@
                     <div class="user-update-btn">
                         <%= link_to "Edit", edit_user_registration_path(current_user), class: "update-btn" %>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
