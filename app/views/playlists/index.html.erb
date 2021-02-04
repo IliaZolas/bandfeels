@@ -4,13 +4,16 @@
             <%= render 'shared/verticalnavbar' %>
             <%= yield %>
         </div>
-        <div class="albums-area">
+        <div class="playlist-area">
+        <h1>Playlists</h1>
+            <%= link_to "Create New Playlist", new_playlist_path,class: "add-track-button" %>
+        <div class="playlist-grid">
         <% @playlist.each do |playlist| %>    
             <div class="track-card">
-            <% if playlist.photo.attached? %>
-                <%= cl_image_tag playlist.photo.key, class: "card-background"%>
-                <%= cl_image_tag playlist.photo.key, class: "", height: 180 %>
-            <% end %>
+                <% if playlist.photo.attached? %>
+                    <%= cl_image_tag playlist.photo.key, class: "card-background"%>
+                    <%= cl_image_tag playlist.photo.key, class: "", height: 180 %>
+                <% end %>
                 <div class="album-details">
                     <h2 class="card-header"><%= playlist.playlist_title %></h2>
                     <p class="card-subheader"><%= playlist.playlist_description %></p>
@@ -23,6 +26,7 @@
                 </div>
             </div>
             <% end %>
+        </div>
         </div>
     </div>
 
