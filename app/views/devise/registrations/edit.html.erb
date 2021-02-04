@@ -5,7 +5,7 @@
             <%= yield %>
         </div>
             <div class="account-area" id="trackpopup">
-            <h2>Edit <%= resource_name.to_s.humanize %></h2>
+            <h2>Edit Account Details</h2>
 
                 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
                 <%= f.error_notification %>
