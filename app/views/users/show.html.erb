@@ -6,19 +6,22 @@
         </div>
             <div class="account-area" id="trackpopup">
                 <h1>Account</h1>
-                <% if @user.photo.attached? %>
-                    <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
+                <div class="avatar-account">
+                    <h3>Profile Picture</h3>
+                    <% if @user.photo.attached? %>
+                    <%= cl_image_tag @user.photo.key, class: "avatar-large-account" %>
                     <%end%>
-                <p><%= @user.fname %></p>
-                <p><%= @user.lname %></p>
-                <p><%= @user.username %></p>
-                <p><%= @user.email %></p>
-
-                <div class="user-update-btn">
-                <%= link_to "Edit", edit_user_registration_path(current_user), class: "update-btn" %>
                 </div>
+                <div class="account-details">
+                    <p><strong>First Name   :</strong> <%= @user.fname %></p>
+                    <p><strong>Last Name    :</strong> <%= @user.lname %></p>
+                    <p><strong>Username     :</strong> <%= @user.username %></p>
+                    <p><strong>Email        :</strong> <%= @user.email %></p>
 
-
+                    <div class="user-update-btn">
+                        <%= link_to "Edit", edit_user_registration_path(current_user), class: "update-btn" %>
+                    </div>
+                </div>
             </div>
         </div>
     <div class="fullwidth-player fixed">
