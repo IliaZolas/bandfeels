@@ -13,7 +13,7 @@
                     <%end%>
                 </div>
                 <div class="album-show-details">
-                <div>
+                <div class="search-track">
                 <h2>Search Track</h2>
                     <%= form_tag station_index_path, method: :get do %>
                     <%= text_field_tag :query,
@@ -21,7 +21,7 @@
                         class: "search-form",
                         placeholder: "Search by mood, activity or emotion"
                     %>
-                    <%= submit_tag "Search", class: "btn btn-primary" %>
+                    <%= submit_tag "Search", class: "search-button" %>
                     <% end %>
                 </div> 
                     <div class="">

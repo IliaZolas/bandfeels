@@ -31,3 +31,16 @@
 .add-track-button {
     
 }
+
+.search-button {
+    background-color: #DD13D5;
+    color: white;
+    font-size: 16px;
+    padding: 10px 25px 10px 25px;
+    border: 0;
+    border-radius: 10px;
+    &:hover {
+        color:white;
+        text-decoration: none;
+    }
+}
