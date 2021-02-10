@@ -1,5 +1,5 @@
 <div class="station-background">
-    <div class="station-flex">
+    <div class="playlist-flex">
         <div>
             <%= render 'shared/verticalnavbar' %>
             <%= yield %>
@@ -14,7 +14,7 @@
                     <%= cl_image_tag playlist.photo.key, class: "card-background"%>
                     <%= cl_image_tag playlist.photo.key, class: "", height: 180 %>
                 <% end %>
-                <div class="album-details">
+                <div class="track-playlist-details">
                     <h2 class="card-header"><%= playlist.playlist_title %></h2>
                     <p class="card-subheader"><%= playlist.playlist_description %></p>
                         <div class="flex space-between controllers">
