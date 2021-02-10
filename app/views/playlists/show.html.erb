@@ -1,16 +1,16 @@
 <div class="station-background">
-    <div class="station-flex">
+    <div class="playlist-flex">
         <div>
             <%= render 'shared/verticalnavbar' %>
             <%= yield %>
         </div>
-            <div class="album-tracks-area">
+            <div class="playlist-tracks-area">
                 <div class="background-albums-show">
                     <% if @playlist.photo.attached? %>
                     <%= cl_image_tag @playlist.photo.key, class: "show-background"%>
                     <%end%>
                 </div>
-                <div class="album-show-details"> 
+                <div class="playlist-show-details"> 
                     <div class="">
                         <h2 class="card-header"><%= @playlist.playlist_title %></h2>
                         <p class="card-subheader"><%= @playlist.playlist_description %></p>
@@ -18,14 +18,14 @@
                     <div class="add-track">
                     
                     </div>
-                <div class="album-tracks-area">
+                <div class="playlist-tracks-area">
                     <% @tracks.each do |track| %>    
                     <div class="track-card">
                     <% if track.photo.attached? %>
                         <%= cl_image_tag track.photo.key, class: "card-background"%>
                         <%= cl_image_tag track.photo.key, class: "", height: 180 %>
                     <% end %>
-                        <div class="album-details">
+                        <div class="track-playlist-details">
                             <h2 class="card-header"><%= track.title %></h2>
                             <p class="card-subheader"><%= track.description %></p>
                                 <div class="flex space-between controllers">
