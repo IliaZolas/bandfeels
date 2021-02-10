@@ -4,15 +4,15 @@
             <%= render 'shared/verticalnavbar' %>
             <%= yield %>
         </div>
-            <div class="album-tracks-area" id="trackpopup">
-                <div class="background-albums-show">
+            <div class="station-tracks-area" id="trackpopup">
+                <div class="background-station-show">
                     <% if @track.first.photo.attached? %>
                     <%= cl_image_tag @track.first.photo.key, class: "show-background"%>
                     <% else %>
                     <% render 'station/index'%>
                     <%end%>
                 </div>
-                <div class="album-show-details">
+                <div class="track-show-details">
                 <div class="search-track">
                 <h2>Search Track</h2>
                     <%= form_tag station_index_path, method: :get do %>
@@ -28,14 +28,14 @@
                         <h2 class="card-header"><%= @track.first.title %></h2>
                         <p class="card-subheader"><%= @track.first.description %></p>
                     </div>
-                <div class="album-tracks-area">
+                <div class="station-tracks-area">
                     <% @track.each do |track| %>    
                     <div class="track-card" id="trackcard">
                     <% if track.photo.attached? %>
                         <%= cl_image_tag track.photo.key, class: "card-background"%>
                         <%= cl_image_tag track.photo.key, class: "", height: 180 %>
                     <% end %>
-                        <div class="album-details" id="albumdetails">
+                        <div class="track-station-details" id="">
                             <h2 class="card-header"><%= track.title %></h2>
                             <p class="card-subheader"><%= track.description %></p>
                                 <div class="flex space-between controllers">
