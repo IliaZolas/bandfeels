@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_151228) do
+ActiveRecord::Schema.define(version: 2021_02_11_140109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,22 @@ ActiveRecord::Schema.define(version: 2021_01_28_151228) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_albums_on_user_id"
+  end
+
+  create_table "liked_tracks", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "track_id", null: false
+    t.bigint "like_id", null: false
+    t.index ["like_id"], name: "index_liked_tracks_on_like_id"
+    t.index ["track_id"], name: "index_liked_tracks_on_track_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "playlist_tracks", force: :cascade do |t|
@@ -116,6 +132,9 @@ ActiveRecord::Schema.define(version: 2021_01_28_151228) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "albums", "users"
+  add_foreign_key "liked_tracks", "likes"
+  add_foreign_key "liked_tracks", "tracks"
+  add_foreign_key "likes", "users"
   add_foreign_key "playlist_tracks", "playlists"
   add_foreign_key "playlist_tracks", "tracks"
   add_foreign_key "playlists", "users"

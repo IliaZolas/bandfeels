@@ -1,0 +1,2 @@
+class LikedTrack < ApplicationRecord
+end
