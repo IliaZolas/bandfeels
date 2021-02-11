@@ -20,6 +20,10 @@
         <%= link_to "Albums", albums_path, class: "nav-text" %>
         </div>
         <div class="flex">
+        <i class="fas fa-compact-disc"></i>
+        <%= link_to "Liked", albums_path, class: "nav-text" %>
+        </div>
+        <div class="flex">
         <i class="fas fa-user"></i>
         <%= link_to "Account", user_path(current_user), class: "nav-text" %>
         </div>
