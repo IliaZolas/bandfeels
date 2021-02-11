@@ -1,0 +1,2 @@
+class LikedTracksController < ApplicationController
+end
