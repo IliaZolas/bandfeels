@@ -1,41 +1,27 @@
 <div class="station-background">
-    <div class="station-flex">
+    <div class="playlist-flex">
         <div>
             <%= render 'shared/verticalnavbar' %>
             <%= yield %>
         </div>
-            <div class="station-tracks-area" id="trackpopup">
-                <div class="background-station-show">
+            <div class="playlist-tracks-area">
+                <div class="background-albums-show">
                     <% if @track.first.photo.attached? %>
                     <%= cl_image_tag @track.first.photo.key, class: "show-background"%>
-                    <% else %>
-                    <% render 'station/index'%>
                     <%end%>
                 </div>
-                <div class="track-show-details">
-                <div class="search-track">
-                <h2>Search Track</h2>
-                    <%= form_tag station_index_path, method: :get do %>
-                    <%= text_field_tag :query,
-                        params[:query],
-                        class: "search-form",
-                        placeholder: "Search by mood, activity or emotion"
-                    %>
-                    <%= submit_tag "Search", class: "search-button" %>
-                    <% end %>
-                </div> 
+                <div class="playlist-show-details"> 
                     <div class="">
-                        <h2 class="card-header"><%= @track.first.title %></h2>
-                        <p class="card-subheader"><%= @track.first.description %></p>
+                        <h2 class="card-header">Tracks that you liked</h2>
                     </div>
-                <div class="station-tracks-area">
-                    <% @track.each do |track| %>    
-                    <div class="track-card" id="trackcard">
+                <div class="playlist-tracks-area">
+                    <% @tracks.each do |track| %>    
+                    <div class="track-card">
                     <% if track.photo.attached? %>
                         <%= cl_image_tag track.photo.key, class: "card-background"%>
                         <%= cl_image_tag track.photo.key, class: "", height: 180 %>
                     <% end %>
-                        <div class="track-station-details" id="">
+                        <div class="track-playlist-details">
                             <h2 class="card-header"><%= track.title %></h2>
                             <p class="card-subheader"><%= track.description %></p>
                                 <div class="flex space-between controllers">
@@ -48,35 +34,11 @@
                                         <% if track.track.attached? %>
                                         <%= cl_video_tag track.track.key,:source_types => [:mp3],:controls => true,:poster => false, class: "track-play play-track", id: "play-track"%>
                                         <%end%>
-                                <div class="track-actions space-between">
-                                    <div>
-                                        <i class="fas fa-heart"></i>
-                                        <%= simple_form_for @liked, url: liked_track_path, method: :post do |f| %>
-                                        <%= f.input :track_id, as: :hidden, input_html: { value: track.id } %>
-                                        <%= f.submit "Create" %>
-                                        <% end %>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-plus-circle addtoplaylist" id="popup-btn"></i>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-share-alt"></i>
-                                    </div>
-                                </div>
+                            <%= link_to "Edit", class: "track-edit" %>
                         </div>
-                        <div class="pop-up hidden-popup" id="popup">
-                            <div>
-                                <i class="fas fa-times close-popup"></i>
-                            </div>
-                            <h1>Choose Playlist</h1>
-                            <div class="playlist-form">
-                                <%= simple_form_for @playlist_track, url: playlist_tracks_path, method: :post do |f| %>
-                                    <%= f.association :playlist, :collection => Playlist.all, label_method: :playlist_title %>
-                                    <%= f.input :track_id, as: :hidden, input_html: { value: track.id } %>
-                                    <%= f.submit "Create" %>
-                                <% end %>
-                            </div>
-                        </div>
+                        <p class='delete-button'>
+                        
+                        </p>
                     </div>
                     <% end %>
                 </div>
@@ -90,7 +52,7 @@
                         <img class="image-player" src="https://images.unsplash.com/photo-1531278520962-fcf47a2faea2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2989&q=80">
                     </div>
                     <div class="player-song-details-container">
-                        <h1 class="player-song-title"><%= @track.first.title %></h1>
+                        <h1 class="player-song-title">Track Name</h1>
                         <h2 class="player-song-details"> Artist - Album </h2>
                     </div>
                 </div>
