@@ -7,6 +7,7 @@ class StationController < ApplicationController
             @track = Track.all
         end
         @playlist_track = PlaylistTrack.new
+        @liked_track = LikedTrack.new
     end
 
     def show

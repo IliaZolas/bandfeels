@@ -2,6 +2,7 @@ class LikesController < ApplicationController
 
     def index
         @liked = Like.where(user_id: current_user)
+        @tracks = @liked.tracks
     end
     
     def show

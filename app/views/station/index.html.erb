@@ -51,7 +51,7 @@
                                 <div class="track-actions space-between">
                                     <div>
                                         <i class="fas fa-heart"></i>
-                                        <%= simple_form_for @liked, url: liked_track_path, method: :post do |f| %>
+                                        <%= simple_form_for @liked_track, url: liked_tracks_path, method: :post do |f| %>
                                         <%= f.input :track_id, as: :hidden, input_html: { value: track.id } %>
                                         <%= f.submit "Create" %>
                                         <% end %>

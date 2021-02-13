@@ -5,11 +5,7 @@
             <%= yield %>
         </div>
             <div class="playlist-tracks-area">
-                <div class="background-albums-show">
-                    <% if @track.first.photo.attached? %>
-                    <%= cl_image_tag @track.first.photo.key, class: "show-background"%>
-                    <%end%>
-                </div>
+            
                 <div class="playlist-show-details"> 
                     <div class="">
                         <h2 class="card-header">Tracks that you liked</h2>
