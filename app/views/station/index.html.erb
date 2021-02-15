@@ -72,7 +72,7 @@
                             <h1>Choose Playlist</h1>
                             <div class="playlist-form">
                                 <%= simple_form_for @playlist_track, url: playlist_tracks_path, method: :post do |f| %>
-                                    <%= f.association :playlist, :collection => Playlist.all, label_method: :playlist_title %>
+                                    <%= f.association :playlist, :collection => Playlist.where(user_id: current_user), label_method: :playlist_title %>
                                     <%= f.input :track_id, as: :hidden, input_html: { value: track.id } %>
                                     <%= f.submit "Create" %>
                                 <% end %>
