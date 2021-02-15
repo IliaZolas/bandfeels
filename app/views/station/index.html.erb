@@ -50,11 +50,12 @@
                                         <%end%>
                                 <div class="track-actions space-between">
                                     <div>
-                                        <i class="fas fa-heart"></i>
                                         <%= simple_form_for @liked_track, url: liked_tracks_path, method: :post do |f| %>
                                         <%= f.input :like_id, as: :hidden, input_html: { value: 1 } %>
                                         <%= f.input :track_id, as: :hidden, input_html: { value: track.id } %>
-                                        <%= f.submit "Create" %>
+                                        <%= button_tag type: 'submit', class: "like-button", id: "like-button" do %>
+                                                <i class="fas fa-heart"></i>
+                                            <% end %>
                                         <% end %>
                                     </div>
                                     <div>
