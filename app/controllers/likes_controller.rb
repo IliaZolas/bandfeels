@@ -1,7 +1,10 @@
 class LikesController < ApplicationController
 
     def index
-        @tracks = Like.where(user_id: current_user)
+        # @tracks = LikedTrack.all
+        # @liked = Like.find(params[:id])
+        # @tracks = @liked.tracks
+        @liked = Like.where(user_id: current_user)
     end
     
     def show

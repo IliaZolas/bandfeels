@@ -1,5 +1,10 @@
 class LikedTracksController < ApplicationController
 
+    def new
+    @liked = Like.new
+    
+    end
+
     def create
     @liked_track = LikedTrack.new(liked_track_params)
         if @liked_track.save!

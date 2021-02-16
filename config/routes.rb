@@ -18,17 +18,17 @@ Rails.application.routes.draw do
 
     resources :tracks
     
-    resources :station
+    resources :station, only: [:index, :show]
 
-    resources :playlist_tracks
+    resources :playlist_tracks,  only: [:create]
 
-    resources :users
+    resources :users,  only: [:index, :show, :update]
 
     resources :playlists do
       resources :tracks
     end
 
-    resources :liked_tracks
+    resources :liked_tracks,  only: [:new, :create]
 
     resources :likes do
       resources :tracks
@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
     
 
-    # get '/tracks/:id', to: 'tracks#playtrack', as: :playtrack 
+    # get '/likes/:id', to: 'likes#index', as: :index 
 
     # resources :tracks
     # resoures :user
