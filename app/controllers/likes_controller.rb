@@ -1,35 +1,38 @@
 class LikesController < ApplicationController
 
     def index
-        # @tracks = LikedTrack.all
-        # @liked = Like.find(params[:id])
-        # @tracks = @liked.tracks
-        @liked = Like.where(user_id: current_user)
-    end
-    
-    def show
+        # @track = Like.all
+        # @user = User.where(user_id: current_user)
         @liked = Like.find(params[:id])
         @tracks = @liked.tracks
     end
 
+    def show
+        @liked = Like.find(params[:id])
+        @tracks = @liked.track
+    end
+
+
     def new
-        @liked = Like.new
+    @liked = Like.new
     end
 
     def create
-        @liked = Like.new(track_params)
-        @liked.user = current_user
-        if @liked.save!
-            redirect_to likes_path(@liked)
+    @liked_track = Like.new(liked_track_params)
+        if @liked_track.save!
+            redirect_to station_index_path
         else
             render 'new'
         end
     end
 
+    def destroy
+    end
+
     private
 
-    def track_params
-        params.require(:liked_track).permit(:track_id, :like_id)
+    def liked_track_params
+        params.require(:like).permit(:track_id, :user_id)
     end
 
 

@@ -16,7 +16,9 @@ Rails.application.routes.draw do
       resources :tracks
     end
 
-    resources :tracks
+    resources :tracks do
+      resources :likes, only: [:create, :destroy]
+    end
     
     resources :station, only: [:index, :show]
 
@@ -25,10 +27,8 @@ Rails.application.routes.draw do
     resources :users,  only: [:index, :show, :update]
 
     resources :playlists do
-      resources :tracks
+      resources :tracks 
     end
-
-    resources :liked_tracks,  only: [:new, :create]
 
     resources :likes do
       resources :tracks
@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
     
 
-    # get '/likes/:id', to: 'likes#index', as: :index 
+    get '/likes', to: 'likes#index', as: :index 
 
     # resources :tracks
     # resoures :user
