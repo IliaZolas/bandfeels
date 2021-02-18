@@ -3,13 +3,15 @@ class LikesController < ApplicationController
     def index
         # @track = Like.all
         # @user = User.where(user_id: current_user)
-        @liked = Like.find(params[:id])
-        @tracks = @liked.tracks
+        @user = User.find(params[:id])
+        @tracks = Like.where(user_id: current_user)
     end
 
     def show
-        @liked = Like.find(params[:id])
-        @tracks = @liked.track
+        # @liked = Like.find(params[:id])
+        # @tracks = @liked.track
+        # @user = User.find(params[:id])
+        @tracks = Like.all
     end
 
 

@@ -6,7 +6,7 @@
         </div>
             <div class="playlist-tracks-area">
                 <div class="background-albums-show">
-                    <% if @track.photo.attached? %>
+                    <% if @tracks.photo.attached? %>
                     <%= cl_image_tag @tracks.photo.key, class: "show-background"%>
                     <%end%>
                 </div>
