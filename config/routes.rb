@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :tracks do
       resources :likes, only: [:create, :destroy]
     end
+
+    get '/likes', to: 'likes#index', as: :index 
     
     resources :station, only: [:index, :show]
 
@@ -30,11 +32,10 @@ Rails.application.routes.draw do
       resources :tracks 
     end
 
+
     # resources :likes do
     #   resources :tracks
     # end
-
-    get '/likes', to: 'likes#index', as: :index 
 
     # resources :tracks
     # resoures :user
