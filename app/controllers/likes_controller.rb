@@ -1,16 +1,18 @@
 class LikesController < ApplicationController
-    before_action :find_track
+    before_action :find_track, only: [:create]
 
     def index
-        # @track = Like.all
+        # @tracks = Like.all
+        # @likes = 
+        # @liked = @tracks.likes
         # @user = User.where(user_id: current_user)
-        @user = User.find(params[:id])
-        @tracks = Like.where(user_id: current_user)
+        # @user = User.find(params[:id])
+        # @tracks = Like.where(user_id: current_user)
     end
 
     def show
         # @liked = Like.find(params[:id])
-        # @tracks = @liked.track
+        # @tracks = @liked.tracks
         # @user = User.find(params[:id])
         @tracks = Like.all
     end
@@ -24,21 +26,20 @@ class LikesController < ApplicationController
         if already_liked?
             flash[:notice] = "You can't like more than once"
         else
-        @track.likes.create(user_id: current_user.id)
+        @track.likes.create(user_id: current_user.id,track_id:params[:track_id])
         end
         redirect_to station_index_path
     end
-    # @liked_track = Like.new(liked_track_params)
-    #     if @liked_track.save!
-    #         redirect_to station_index_path
-    #     else
-    #         render 'new'
-    #     end
-    # end
 
     def destroy
     end
 
+
+    def userlikes
+        # @likedtrack = Like.where(user_id: current_user)
+        @tracks = current_user.liked_tracks
+    end
+    
     private
 
     # def liked_track_params

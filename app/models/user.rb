@@ -8,5 +8,6 @@ class User < ApplicationRecord
   has_many :tracks
   has_many :albums
   has_many :likes
+  has_many :liked_tracks, :through => :likes, :source => :track
   has_one_attached :photo
 end

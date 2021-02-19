@@ -6,8 +6,8 @@
         </div>
             <div class="playlist-tracks-area">
                 <div class="background-albums-show">
-                    <% if @tracks.photo.attached? %>
-                    <%= cl_image_tag @tracks.photo.key, class: "show-background"%>
+                    <% if @tracks.first.photo.attached? %>
+                    <%= cl_image_tag @tracks.first.photo.key, class: "show-background"%>
                     <%end%>
                 </div>
                 <div class="playlist-show-details"> 
@@ -15,8 +15,7 @@
                     <h1>Liked Tracks</h1>
                     </div>
                 <div class="playlist-tracks-area">
-                    <% @tracks.each do |track| %>  
-                    <% raise %>  
+                    <% @tracks.each do |track| %>    
                     <div class="track-card">
                     <% if track.photo.attached? %>
                         <%= cl_image_tag track.photo.key, class: "card-background"%>
