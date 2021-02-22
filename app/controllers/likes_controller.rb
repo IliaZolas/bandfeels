@@ -2,18 +2,9 @@ class LikesController < ApplicationController
     before_action :find_track, only: [:create]
 
     def index
-        # @tracks = Like.all
-        # @likes = 
-        # @liked = @tracks.likes
-        # @user = User.where(user_id: current_user)
-        # @user = User.find(params[:id])
-        # @tracks = Like.where(user_id: current_user)
     end
 
     def show
-        # @liked = Like.find(params[:id])
-        # @tracks = @liked.tracks
-        # @user = User.find(params[:id])
         @tracks = Like.all
     end
 
@@ -36,15 +27,10 @@ class LikesController < ApplicationController
 
 
     def userlikes
-        # @likedtrack = Like.where(user_id: current_user)
         @tracks = current_user.liked_tracks
     end
     
     private
-
-    # def liked_track_params
-    #     params.require(:like).permit(:track_id, :user_id)
-    # end
 
     def find_track
         @track = Track.find(params[:track_id])

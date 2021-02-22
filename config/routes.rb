@@ -32,14 +32,7 @@ Rails.application.routes.draw do
     resources :playlists do
       resources :tracks 
     end
-
-
-    # resources :likes do
-    #   resources :tracks
-    # end
-
-    # resources :tracks
-    # resoures :user
+    
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
