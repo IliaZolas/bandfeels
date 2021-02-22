@@ -4,7 +4,7 @@
                     <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
                     <%end%>
         <h1 class="vertnav-username">@<%= current_user.username %></h1>
-        <p class="vertnav-usertype">User Type</h1>
+        <p class="vertnav-usertype"><%= current_user.role %></p>
     </div>
     <div class="vertnav-items">
         <div class="flex">
