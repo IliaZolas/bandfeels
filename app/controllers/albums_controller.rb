@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+    before_action :check_user
 
     def index
         @album = Album.where(user_id: current_user)
@@ -35,4 +36,11 @@ class AlbumsController < ApplicationController
     def album_params
         params.require(:album).permit(:album_title, :album_description, :photo)
     end
+
+    def check_user
+        unless current_user.role == "Artist"
+        redirect_to station_index_path
+        end
+    end
+
 end

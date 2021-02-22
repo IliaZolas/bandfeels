@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    enum role: {artist: 0, listener: 1}
 
     def index
         @user = User.all

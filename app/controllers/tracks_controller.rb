@@ -1,4 +1,5 @@
 class TracksController < ApplicationController
+    before_action :check_user, only: [:new, :create, :destroy]
 
     def index
         @track = Track.all
@@ -48,6 +49,12 @@ class TracksController < ApplicationController
 
     def track_params
         params.require(:track).permit(:title, :description, :tag, :photo, :track, playlist_tracks_attributes: [:id, :track_id, :playlist_id, :_destroy])
+    end
+
+    def check_user
+        unless current_user.role == "Artist"
+        redirect_to station_index_path
+        end
     end
 
 end
