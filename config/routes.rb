@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       resources :likes, only: [:create, :destroy]
     end
 
-    get '/likes/:id', to: 'likes#index', as: :index
+    # get '/likes/:id', to: 'likes#index', as: :index
     get '/user/:id/likes', to: 'likes#userlikes', as: :userlikes
     
     resources :station, only: [:index, :show]
