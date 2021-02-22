@@ -16,6 +16,11 @@
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "Last Name" }%>
+                <%= f.input :role,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "What are you?" },
+                            :collection => %w[Artist Listener] %>
                 <%= f.input :username,
                             required: true,
                             autofocus: true,
