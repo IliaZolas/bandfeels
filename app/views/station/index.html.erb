@@ -13,17 +13,6 @@
                     <%end%>
                 </div>
                 <div class="track-show-details">
-                <div class="search-track">
-                <h2>Search Track</h2>
-                    <%= form_tag station_index_path, method: :get do %>
-                    <%= text_field_tag :query,
-                        params[:query],
-                        class: "search-form",
-                        placeholder: "Search by mood, activity or emotion"
-                    %>
-                    <%= submit_tag "Search", class: "search-button" %>
-                    <% end %>
-                </div> 
                     <div class="">
                         <h2 class="card-header"><%= @track.first.title %></h2>
                         <p class="card-subheader"><%= @track.first.description %></p>

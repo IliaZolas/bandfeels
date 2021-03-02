@@ -18,9 +18,15 @@
 }
 
 .search-track {
-    padding-top: 50px;
-    padding-bottom: 100px;
+    // padding-top: 50px;
+    // padding-bottom: 100px;
+    
 }
+
+.hidden {
+    display: none;
+}
+
 
 .search-form {
     width: 300px;
@@ -46,4 +52,5 @@
 .track-show-details {
     position: absolute;
     margin-left: 280px;
+    padding-top: 200px;
 }
