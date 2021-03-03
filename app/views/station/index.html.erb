@@ -14,8 +14,9 @@
                 </div>
                 <div class="track-show-details">
                     <div class="">
-                        <h2 class="card-header"><%= @track.first.title %></h2>
-                        <p class="card-subheader"><%= @track.first.description %></p>
+                        <h2 class="station-track-details">
+                        There are a total of <span class="track-count"><%= Track.count %></span> tracks on Bandfeels.</h2>
+                        <h2 class="station-track-details">Now playing - <%= @track.first.title %></h2>
                     </div>
                 <div class="station-tracks-area">
                     <% @track.each do |track| %>    

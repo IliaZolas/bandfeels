@@ -41,6 +41,7 @@
     width: 100%;
     // margin-left: 280px;
     padding-bottom: 200px;
+    padding-top: 40px;
 }
 
 .background-station-show {
@@ -52,5 +53,9 @@
 .track-show-details {
     position: absolute;
     margin-left: 280px;
-    padding-top: 200px;
+    padding-top: 150px;
+}
+
+.track-count {
+    color: #DD13D5;
 }
