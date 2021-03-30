@@ -35,7 +35,7 @@
 }
 
 .main-station-container {
-    // width: 100%;
+    width: 100%;
 }
 
 
@@ -45,9 +45,11 @@
     // grid-column-gap: 40px;
     // row-gap: 40px;
     // padding: 75px 20px 75px 20px;
-    // width: 100%;
+    // width: 100vw;
     // margin-left: 280px;
+    position: absolute;
     display: flex;
+    // overflow-x: auto;
     // display: inline-block;
     // padding-bottom: 200px;
     padding-top: 40px;
@@ -57,16 +59,20 @@
 .background-station-show {
     position: absolute;
     // height: 100vw;
-    z-index: 0;
+    z-index: -1;
 }
 
 .track-show-details {
-    position: absolute;
+    // position: absolute;
     margin-left: 280px;
     padding-top: 300px;
+    width: 900px;
 }
 
 .track-count {
     color: #DD13D5;
 }
 
+.border {
+    border: red solid 5px;
+}
