@@ -1,10 +1,16 @@
 .station-background {
-    background-image: url("home-background.jpg");
+    // background-image: url("home-background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     // height: 100%;
     background-attachment:fixed;
+    overflow:hidden;
+    overflow-x: scroll;
+}
+
+.station-background::-webkit-scrollbar {
+    display: none;
 }
 
 .station-flex {
@@ -35,26 +41,33 @@
 }
 
 .main-station-container {
-    width: 100%;
+    width: auto;
 }
 
 
 .station-tracks-area {
-    // display: grid;
-    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    // grid-column-gap: 40px;
-    // row-gap: 40px;
-    // padding: 75px 20px 75px 20px;
-    // width: 100vw;
-    // margin-left: 280px;
-    position: absolute;
+    // position: absolute;
     display: flex;
-    // overflow-x: auto;
-    // display: inline-block;
-    // padding-bottom: 200px;
-    padding-top: 40px;
+    padding-top: 440px;
     margin-left: 280px;
+    scrollbar-width: none;
 }
+
+// .boxHoz {
+    
+//     overflow-x: scroll;
+//     overflow-y:hidden;
+//     white-space: nowrap;
+//     margin-bottom: 20px;
+//     scrollbar-width: none;
+// }
+
+
+// .station-tracks-area::-webkit-scrollbar {
+//     display: none;
+// }
+
+
 
 .background-station-show {
     position: absolute;
@@ -64,6 +77,7 @@
 
 .track-show-details {
     // position: absolute;
+    position: fixed;
     margin-left: 280px;
     padding-top: 300px;
     width: 900px;
