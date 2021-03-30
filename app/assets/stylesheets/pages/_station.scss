@@ -17,6 +17,8 @@
     height: 100vh;
 }
 
+
+
 .search-track {
     // padding-top: 50px;
     // padding-bottom: 100px;
@@ -32,17 +34,24 @@
     width: 300px;
 }
 
+.main-station-container {
+    // width: 100%;
+}
+
 
 .station-tracks-area {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-column-gap: 40px;
-    row-gap: 40px;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    // grid-column-gap: 40px;
+    // row-gap: 40px;
     // padding: 75px 20px 75px 20px;
-    width: 100%;
+    // width: 100%;
     // margin-left: 280px;
-    padding-bottom: 200px;
+    display: flex;
+    // display: inline-block;
+    // padding-bottom: 200px;
     padding-top: 40px;
+    margin-left: 280px;
 }
 
 .background-station-show {
@@ -54,7 +63,7 @@
 .track-show-details {
     position: absolute;
     margin-left: 280px;
-    padding-top: 150px;
+    padding-top: 300px;
 }
 
 .track-count {
