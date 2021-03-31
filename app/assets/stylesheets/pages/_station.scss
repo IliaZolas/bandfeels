@@ -9,6 +9,17 @@
     overflow-x: scroll;
 }
 
+.station-background-default {
+    background-image: url("home-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-attachment:fixed;
+    // overflow:hidden;
+    // overflow-x: scroll;
+}
+
 .station-background::-webkit-scrollbar {
     display: none;
 }

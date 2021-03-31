@@ -1,8 +1,13 @@
-<div class="station-background">
+<div class="station-background-default">
     <div class="station-flex">
         <div>
             <%= render 'shared/verticalnavbar' %>
             <%= yield %>
+        </div>
+        <div>
+        <div class="album-index-heading">
+            <h1>Make a new album</h1>
+            <%= link_to "Make new album", new_album_path, class: "track-edit" %>
         </div>
         <div class="albums-area">
         <% @album.each do |album| %>    
@@ -24,6 +29,7 @@
             </div>
             <% end %>
         </div>
+    </div>
     </div>
 
     <div class="fullwidth-player fixed">
